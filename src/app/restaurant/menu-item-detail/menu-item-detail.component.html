@@ -1,0 +1,26 @@
+<div class="m-3">
+  <div class="card mx-auto shadow w-50"  *ngIf="menuItemDetails; else messageDisplay">
+    <img class="card-img-top" style="max-height: 300px;" [src]="menuItemDetails.itemImage" alt="Card image">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-8">
+          <h3 class="card-title">{{menuItemDetails.itemName}}</h3>
+        </div>
+        <div class="col-4 text-right">
+          <h3 class="card-title">${{menuItemDetails.itemPrice}}</h3>
+        </div>
+      </div>
+      <h5>Discription: </h5>
+      <p class="card-text">{{menuItemDetails.itemDescription}}</p>
+      <h5>Ingrediants: </h5>
+      <p class="card-text">{{menuItemDetails.itemIngrediants}}</p>
+      <a routerLink="/resHome" class="btn btn-primary mr-3">Back</a>
+      <a (click)="onEdit()" class="btn btn-warning text-light mr-3">Edit</a>
+      <a (click)="removeItem()" class="btn btn-danger text-light mr-3">Remove</a>
+    </div>
+  </div>
+  <ng-template #messageDisplay class="shadow text-center">
+    <h3 class="text-center">Please select MenuItem..</h3>
+  </ng-template>
+</div>
+

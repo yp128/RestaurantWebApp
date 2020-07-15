@@ -1,0 +1,8 @@
+<div class="row  row-cols-lg-2 row-cols-1 no-gutters">
+  <div class="col" *ngFor="let menuItem of menuList; let i = index">
+    <app-res-menu-item
+    [menuItem]="menuItem"
+    [index]="i" >
+    </app-res-menu-item>
+  </div>
+</div>
